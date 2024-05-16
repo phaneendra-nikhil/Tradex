@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/images/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <title>Tradex - Cryptocurrency Live trading website</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const revealElements = document.querySelectorAll("[data-reveal]");
+
+      const scrollReveal = function(){
+        for (let i = 0, len = revealElements.length; i<len; i++) {
+          const isElementOnScreen = revealElements[i].getBoundingClientRect().top < window.innerHeight;
+
+          if(isElementOnScreen){
+            revealElements[i].classList.add("revealed");
+          }else{
+            revealElements[i].classList.remove("revealed");
+          }
+        }
+      }
+      window.addEventListener('scroll', scrollReveal)
+    </script>
+  </body>
+</html>
